@@ -1,0 +1,44 @@
+image: node:latest
+
+stages:
+  - test
+  - build
+
+cache:
+  paths:
+    - code/node_modules/
+
+before_script:
+  - cd code
+  - npm install
+
+lint:
+  stage: test
+  script:
+    - npm run lint
+
+test:
+  stage: test
+  script:
+    - npm test -- --code-coverage
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+
+pack:
+  stage: build
+  script:
+    - npm run build -- --prod
+  only:
+    - master
+  artifacts:
+    name: "${CI_JOB_NAME}_${CI_COMMIT_REF_NAME}"
+    when: on_success
+    expire_in: 1 mos
+    paths:
+      - dist
+
+build:
+  stage: build
+  script:
+    - npm run build -- --prod
+  except:
+    - master
