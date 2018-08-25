@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --output-path dist --base-href https://ldmarz.github.io/sandbox-ngrx-angular",
+    "build": "ng build --output-path dist --base-href https://ldmarz.github.io/sandbox-ngrx-angular/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
