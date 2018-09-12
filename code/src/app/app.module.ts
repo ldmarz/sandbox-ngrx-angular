@@ -14,6 +14,7 @@ import { routing } from './routes';
 import { JwtInterceptor } from './interceptor/jwtInterceptor';
 import { FormPeopleComponent } from './form-people/form-people.component';
 import { AlertComponent } from './alert/alert.component';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AlertComponent } from './alert/alert.component';
     LoginComponent,
     AdminComponent,
     FormPeopleComponent,
-    AlertComponent
+    AlertComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

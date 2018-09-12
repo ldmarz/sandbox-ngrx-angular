@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-10">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{person.email}} 
+          <span class="badge badge-secondary badge-success" *ngIf="person.enabled">enabled</span> 
+          <span class="badge badge-secondary badge-danger" *ngIf="!person.enabled">disabled</span> 
+        
+        </h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{person.gender}}</h6>
+        <p class="card-text">{{person.first_name}} {{person.last_name}}</p>
+        <p class="card-text">{{person.address}}</p>
+        
+        <a class="btn btn-primary" routerLink="/index">Return to list</a>
+
+      </div>
+    </div>
+  </div>
+</div>

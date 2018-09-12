@@ -28,6 +28,10 @@ export class PersonsService {
     return this.http.post(URL_SERVER + `persons/${id}/activate`, {});
   }
 
+  getPersonById(id: PersonsInterface['id']) {
+    return this.http.get(URL_SERVER + `persons/${id}`, {});
+  }
+
   deletePerson(id: PersonsInterface['id']) {
     return this.http.delete(URL_SERVER + `persons/${id}`, {});
   }

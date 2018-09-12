@@ -5,12 +5,14 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { FormPeopleComponent } from './form-people/form-people.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { DetailComponent } from './detail/detail.component';
 
 const appRoutes: Routes = [
   // { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'index', component: AdminComponent, canActivate: [AuthGuard]},
   { path: 'form-people', component: FormPeopleComponent, canActivate: [AuthGuard]},
+  { path: 'detail/:id', component: DetailComponent, canActivate: [AuthGuard]},
 
   // otherwise redirect to home
   { path: '**', redirectTo: 'login' }
