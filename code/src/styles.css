@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
+.admin-table tr td:not(:last-child) {
+  padding-top: 1.4rem;
+}

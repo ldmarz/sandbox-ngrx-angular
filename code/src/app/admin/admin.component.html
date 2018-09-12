@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-10">
+
+    <button type="button" routerLink="/form-people" style="margin-left: -10px;" class="btn btn-info mb-4">Add persons</button>
+
+    <table class="table admin-table">
+      <thead class="thead-dark">
+        <tr class="row">
+          <th class="col-3">Email</th>
+          <th class="col-2"> First name</th>
+          <th class="col-2"> Last name</th>
+          <th class="col-2">Address</th>
+          <th class="col-1">Enabled</th>
+          <th class="col-2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="row" *ngFor="let person of persons">
+          <td class="col-3 d-inline-block text-truncate"> {{person.email}} </td>
+          <td class="col-2 d-inline-block text-truncate">{{person.first_name}}</td>
+          <td class="col-2 d-inline-block text-truncate"> {{person.last_name}}</td>
+          <td class="col-2 d-inline-block text-truncate"> {{person.address}}</td>
+          <td class="col-1 d-inline-block text-truncate">{{person.enabled}}</td>
+          <td class="col-2 d-inline-block text-truncate">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-outline-primary">
+                <i class="fas fa-pencil-alt"></i>
+              </button>
+              <button type="button" class="btn btn-outline-primary">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+              <button type="button" class="btn btn-outline-primary">
+                <i class="fas fa-check-square" *ngIf="person.enabled"></i>
+                <i class="fas fa-square" *ngIf="!person.enabled"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
