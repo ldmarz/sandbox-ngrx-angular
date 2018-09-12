@@ -11,14 +11,16 @@ export class AlertsService {
 
   sendMessage(message: string | ValidationErrors, errorClass: string = 'alert-success') {
     this.subject.next({ text: message, errorClass });
+    setTimeout(() => {
+      this.clearMessage();
+    }, 3000);
   }
 
   clearMessage() {
-    this.subject.next();
+    this.subject.next({});
   }
 
   getMessage(): Observable<any> {
-    console.log('getMessage');
     return this.subject;
   }
 }
