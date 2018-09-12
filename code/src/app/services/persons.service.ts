@@ -1,18 +1,34 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-const urlServer = 'api/';
+import { HttpClient } from '@angular/common/http';
+import { URL_SERVER } from '../constants';
+import { PersonsInterface } from '../interfaces/persons';
+
 @Injectable({
   providedIn: 'root'
 })
 
 export class PersonsService {
-  headers = new HttpHeaders().set('Authorization', 'Bearer 9-zEcV7rhbzK4PqLY8QdLw');
-
   constructor(private http: HttpClient) {
   }
 
 
   getPersons() {
-    return this.http.get(urlServer + 'persons', {'headers': this.headers});
+    return this.http.get(URL_SERVER + 'persons');
+  }
+
+  savePersons(people: PersonsInterface) {
+    return this.http.post(URL_SERVER + 'persons', people);
+  }
+
+  activatePerson(id: PersonsInterface['id']) {
+    return this.http.post(URL_SERVER + `persons/${id}/deactivate`, {});
+  }
+
+  enablePerson(id: PersonsInterface['id']) {
+    return this.http.post(URL_SERVER + `persons/${id}/activate`, {});
+  }
+
+  deletePerson(id: PersonsInterface['id']) {
+    return this.http.delete(URL_SERVER + `persons/${id}`, {});
   }
 }

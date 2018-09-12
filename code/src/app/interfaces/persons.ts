@@ -1,9 +1,9 @@
 export interface PersonsInterface {
   gender: string;
-  enabled: string;
+  enabled: boolean;
   first_name: string;
   last_name: string;
   email: string;
   address: string;
-  id: string;
+  id?: string;
 }

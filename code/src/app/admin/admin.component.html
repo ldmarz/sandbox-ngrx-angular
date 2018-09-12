@@ -26,12 +26,12 @@
               <button type="button" class="btn btn-outline-primary">
                 <i class="fas fa-pencil-alt"></i>
               </button>
-              <button type="button" class="btn btn-outline-primary">
+              <button type="button" class="btn btn-outline-primary" (click)="deletePerson(person)">
                 <i class="fas fa-trash-alt"></i>
               </button>
-              <button type="button" class="btn btn-outline-primary">
-                <i class="fas fa-check-square" *ngIf="person.enabled"></i>
-                <i class="fas fa-square" *ngIf="!person.enabled"></i>
+              <button type="button" class="btn btn-outline-primary" (click)="togglePerson(person)">
+                <i class="fas fa-check-square" *ngIf="person.enabled" ></i>
+                <i class="far fa-square regular" *ngIf="!person.enabled" ></i>
               </button>
             </div>
           </td>
