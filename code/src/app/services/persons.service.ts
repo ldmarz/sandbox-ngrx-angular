@@ -35,4 +35,8 @@ export class PersonsService {
   deletePerson(id: PersonsInterface['id']) {
     return this.http.delete(URL_SERVER + `persons/${id}`, {});
   }
+
+  updatePeople(id: PersonsInterface['id'], people: PersonsInterface) {
+    return this.http.put(URL_SERVER + `persons/${id}`, people);
+  }
 }

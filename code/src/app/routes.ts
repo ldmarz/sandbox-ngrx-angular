@@ -13,6 +13,7 @@ const appRoutes: Routes = [
   { path: 'index', component: AdminComponent, canActivate: [AuthGuard]},
   { path: 'form-people', component: FormPeopleComponent, canActivate: [AuthGuard]},
   { path: 'detail/:id', component: DetailComponent, canActivate: [AuthGuard]},
+  { path: 'update/:id', component: FormPeopleComponent, canActivate: [AuthGuard]},
 
   // otherwise redirect to home
   { path: '**', redirectTo: 'login' }
