@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\n"
+module.exports = "/* You can add global styles to this file, and also import other style files */\n\n.admin-table tr td:not(:last-child) {\n  padding-top: 1.4rem;\n}\n"
 
 /***/ }),
 
@@ -539,7 +539,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/lenin/Documents/work_tests/crud-user/code/src/styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! /Users/lenin/Documents/sandbox/test-alliot/sandbox-ngrx-angular/code/src/styles.css */"./src/styles.css");
 
 
 /***/ })
